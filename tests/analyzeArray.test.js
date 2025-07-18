@@ -17,3 +17,7 @@ test("test 2", () => {
     length: 7,
   });
 });
+
+test("empty array", () => {
+  expect(() => analyzeArray([])).toThrow("Array is empty");
+});
