@@ -5,7 +5,7 @@ test("add", () => {
 });
 
 test("add", () => {
-  expect(calculator.add(1, 2.3)).toClose(3.3);
+  expect(calculator.add(1, 2.3)).toBeCloseTo(3.3);
 });
 
 test("add", () => {
@@ -17,11 +17,11 @@ test("subtract", () => {
 });
 
 test("subtract", () => {
-  expect(calculator.subtract(3, 2.3)).toClose(0.3);
+  expect(calculator.subtract(3, 2.3)).toBeCloseTo(0.7);
 });
 
 test("subtract", () => {
-  expect(calculator.subtract(3, -2.3)).toClose(5.3);
+  expect(calculator.subtract(3, -2.3)).toBeCloseTo(5.3);
 });
 
 test("multiply", () => {
@@ -29,11 +29,11 @@ test("multiply", () => {
 });
 
 test("multiply", () => {
-  expect(calculator.multiply(2, 2.3)).toClose(4.6);
+  expect(calculator.multiply(2, 2.3)).toBeCloseTo(4.6);
 });
 
 test("multiply", () => {
-  expect(calculator.multiply(-2, 2.3)).toClose(-4.6);
+  expect(calculator.multiply(-2, 2.3)).toBeCloseTo(-4.6);
 });
 
 test("divide", () => {
@@ -41,9 +41,9 @@ test("divide", () => {
 });
 
 test("divide", () => {
-  expect(calculator.divide(4, 2.3)).toClose(1.8);
+  expect(calculator.divide(-4, 2)).toBeCloseTo(-2);
 });
 
-test("divide", () => {
-  expect(calculator.divide(-4, 2.3)).toClose(-1.8);
+test("divide by zero", () => {
+  expect(() => calculator.divide(3, 0)).toThrow("Cannot divide by zero");
 });
